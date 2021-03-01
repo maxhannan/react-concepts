@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="React Concepts" />
+  <img src="./src/logo.svg" alt="React Concepts" />
 
   &#xa0;
 
