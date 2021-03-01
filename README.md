@@ -46,7 +46,8 @@
 
 ## :dart: About ##
 
-Describe your project
+A Small Blog project.
+Used this to learn React & React Router basics
 
 ## :sparkles: Features ##
 
@@ -58,11 +59,10 @@ Describe your project
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
+- [Json Server](https://expo.io/)
 - [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [React Router](https://reactnative.dev/)
+- [WebPack](https://www.typescriptlang.org/)
 
 ## :white_check_mark: Requirements ##
 
@@ -78,10 +78,10 @@ $ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/react-concepts
 $ cd react-concepts
 
 # Install dependencies
-$ yarn
+$ npm install
 
 # Run the project
-$ yarn start
+$ npm start
 
 # The server will initialize in the <http://localhost:3000>
 ```

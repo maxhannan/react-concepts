@@ -1,29 +1,16 @@
-import { useState, useEffect } from 'react';
 import Bloglist from './Bloglist';
-const Home = () => {
-  const [blogs, setBlogs] = useState([
-    { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
-    { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
-    { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
-  ]);
-  
-  const [name, setName] = useState('mario')
-  
-  const handleDelete = (id) => {
-    setBlogs(
-      blogs.filter(blog => blog.id !== id)
-    )
-  }
-  
-  useEffect(()=>{
-    console.log('useEffect ran')
-    console.log(name)
-  },[name]);
+import useFetch from './useFetch';
 
+const Home = () => {
+  const {data: blogs, isPending, error} = useFetch('http://localhost:8000/blogs/')
   return ( 
     <div className="home">
-      <Bloglist title = 'My Blogs' blogs = {blogs} delFn = {handleDelete}/>
-      <button onClick = {()=> setName('luigi')}>change name</button>
+      {/* Displays error message if fetch fails */}
+      { error && <div>{error}</div> }
+      {/* Displays loading message when waiting for fetch */}
+      { isPending && <div>Loading...</div> }
+      {/* waits to render until fetch request is complete */}
+      { blogs && <Bloglist title = 'My Blogs' blogs = {blogs}/> }
     </div>
    );
 }
